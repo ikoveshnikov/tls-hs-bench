@@ -47,6 +47,9 @@ test_names()
 	if [[ -z $DUT_SSH ]]; then
 		missed_var "DUT_SSH" "DUT ssh hostname"
 	fi
+	if [[ -z $KEY ]]; then
+		missed_var "KEY" "SSL certificate type"
+	fi
 }
 
 replace()
@@ -60,6 +63,7 @@ replace()
 		sed -i "s/%DUT_PORT_T_SSL%/${DUT_PORT_T_SSL}/g" $file
 		sed -i "s/%DUT_PORT_TEST%/${DUT_PORT_TEST}/g" $file
 		sed -i "s/%DUT_SSH%/${DUT_SSH}/g" $file
+		sed -i "s/%KEY%/${KEY}/g" $file
 	done
 }
 
