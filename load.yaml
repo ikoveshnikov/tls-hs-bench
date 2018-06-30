@@ -1,0 +1,14 @@
+phantom:
+  address: 192.168.122.12:8081
+  ssl: true
+  headers:
+    - "[Connection: close]"
+  uris:
+    - /0
+  load_profile:
+    load_type: rps # schedule load by defining requests per second
+    schedule: const(6000, 10m)
+console:
+  enabled: true # enable console output
+telegraf:
+  enabled: false # let's disable telegraf monitoring for the first time
