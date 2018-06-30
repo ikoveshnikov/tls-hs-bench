@@ -1,5 +1,5 @@
 phantom:
-  address: 192.168.122.12:8081
+  address: %DUT_IP%:%DUT_PORT_TEST%
   ssl: true
   headers:
     - "[Connection: close]"

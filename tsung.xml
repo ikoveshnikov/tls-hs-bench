@@ -7,7 +7,7 @@
 </clients>
 
 <servers>
-	<server host="192.168.122.12" port="443" type="ssl"/>
+	<server host="%DUT_IP%" port="%DUT_PORT_TEST%" type="ssl"/>
 </servers>
 
 <load>
@@ -25,7 +25,7 @@
 <sessions>
 	<session name="es_load" weight="1" type="ts_http">
 		<request>
-			<http url="/hello" method="GET"/>
+			<http url="/0" method="GET"/>
 		</request>
 	</session>
 </sessions>
