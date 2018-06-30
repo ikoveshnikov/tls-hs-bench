@@ -1,5 +1,4 @@
 #!/bin/bash
 
-CUR_DIR=`realpath $(dirname $0)`
-
-nginx -c $CUR_DIR/nginx.conf -s quit
+scp nginx.conf %DUT_SSH%:/tmp
+ssh %DUT_SSH% 'nginx -c /tmp/nginx.conf -s quit'
