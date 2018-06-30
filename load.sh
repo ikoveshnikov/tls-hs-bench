@@ -26,7 +26,7 @@ run_tsung()
 
 run_dos()
 {
-	../thc-tls-dos/src/thc-tls-dos -c "ECDHE-%KEY%-AES256-GCM-SHA384" --accept %DUT_IP% %DUT_PORT_TEST%
+	../thc-tls-dos/src/thc-ssl-dos -c "ECDHE-%KEY%-AES256-GCM-SHA384" --accept %DUT_IP% %DUT_PORT_TEST%
 }
 
 run_curl()
