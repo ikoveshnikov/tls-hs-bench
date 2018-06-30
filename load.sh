@@ -34,7 +34,7 @@ run_curl()
 	curl -v -k https://%DUT_IP%:%DUT_PORT_TEST%/0
 }
 
-case $space in
+case $1 in
 	tank)
 		run_tank
 		exit 0
