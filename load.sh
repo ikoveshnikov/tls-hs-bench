@@ -26,7 +26,13 @@ run_tsung()
 
 run_dos()
 {
-	../thc-tls-dos/src/thc-ssl-dos -c "ECDHE-%KEY%-AES256-GCM-SHA384" --accept %DUT_IP% %DUT_PORT_TEST%
+	procs=`nproc`
+	for i in `seq 1 ${procs}`;
+	do
+		../thc-tls-dos/src/thc-ssl-dos -l 200 		\
+			-c "ECDHE-%KEY%-AES256-GCM-SHA384"	\
+			--accept %DUT_IP% %DUT_PORT_TEST% &
+	done
 }
 
 run_curl()
