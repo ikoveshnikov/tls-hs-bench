@@ -40,6 +40,11 @@ run_curl()
 	curl -v -k https://%DUT_IP%:%DUT_PORT_TEST%/0
 }
 
+sysctl -w net.ipv4.tcp_tw_reuse=1
+sysctl -w net.core.netdev_max_backlog=10000
+sysctl -w net.core.somaxconn=131072
+sysctl -w net.ipv4.tcp_fin_timeout=10
+
 case $1 in
 	tank)
 		run_tank
