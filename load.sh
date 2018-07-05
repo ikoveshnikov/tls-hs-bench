@@ -31,7 +31,7 @@ run_dos()
 	do
 		../thc-tls-dos/src/thc-ssl-dos -l 200 		\
 			-c "ECDHE-%KEY%-AES256-GCM-SHA384"	\
-			--accept %DUT_IP% %DUT_PORT_TEST% &
+			--accept %DUT_IP% %DUT_PORT_TEST% > dos_log_${i} &
 	done
 }
 
